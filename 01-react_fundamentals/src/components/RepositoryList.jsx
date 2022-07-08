@@ -1,13 +1,19 @@
-import { useState, useEffect } from 'react';
-import { RepositoryItem } from './RepositoryItem';
+import { useState, useEffect } from 'react'
+import { RepositoryItem } from './RepositoryItem'
 
-const [repositories, setRepositories] = useState([]);
-
-useEffect(fetch("https://api.github.com/orgs/rocketseat/repos")
-            .then(response => response.json())
-            .then(data => setRepositories(data)), [])
 
 export function RepositoryList(){
+  const [repositories, setRepositories] = useState([])
+
+  useEffect(() => {
+    fetch("https://api.github.com/orgs/rocketseat/repos")
+      .then(response => response.json())
+      .then(data => {
+        setRepositories(data)
+        console.log(data)
+      })
+  }, [])
+
   return (
     <section className="repository-list">
       <h1>Lista de repositórios</h1>
