@@ -23,7 +23,7 @@ export function Summary() {
       <div className='green-summary'>
         <header>
           <p>Total</p>
-          <img src={totalImg} alt="Total" />
+          <img src={totalImg} alt="Total"/>
         </header>
         <strong>R$1000,00</strong>
       </div>
